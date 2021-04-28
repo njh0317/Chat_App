@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -22,7 +23,6 @@ class RegisterViewController: UIViewController {
         imageView.layer.masksToBounds = true
         
         //border
-        
 //        imageView.layer.borderWidth = 2
 //        imageView.layer.borderColor = UIColor.lightGray.cgColor
         
@@ -187,6 +187,15 @@ class RegisterViewController: UIViewController {
             return
         }
         //Firebase log in
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {authResult, error in
+            guard let result = authResult, error == nil else{
+                print("Error creating user")
+                return
+            }
+            let user = result.user
+            print("Created User: \(user)")
+            
+        })
     }
     func alertUserLoginError(){
         let alert = UIAlertController(title: "WARNING", message: "Please enter all information to create a new account", preferredStyle: .alert)
