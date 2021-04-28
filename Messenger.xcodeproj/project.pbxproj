@@ -19,6 +19,7 @@
 		6C0BE53E26394081004C3B7C /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BE53D26394081004C3B7C /* VideoPlayerViewController.swift */; };
 		6C0BE54126394096004C3B7C /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BE54026394096004C3B7C /* NewConversationViewController.swift */; };
 		6C0BE544263940AF004C3B7C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BE543263940AF004C3B7C /* ProfileViewController.swift */; };
+		6CD67CBD2639503F00DD86BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD67CBC2639503F00DD86BB /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		6C0BE53D26394081004C3B7C /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		6C0BE54026394096004C3B7C /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		6C0BE543263940AF004C3B7C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6CD67CBC2639503F00DD86BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				6C0BE51726393D31004C3B7C /* AppDelegate.swift */,
 				6C0BE51926393D31004C3B7C /* SceneDelegate.swift */,
+				6CD67CBC2639503F00DD86BB /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				6C0BE54126394096004C3B7C /* NewConversationViewController.swift in Sources */,
 				6C0BE51C26393D31004C3B7C /* ConversationViewController.swift in Sources */,
 				6C0BE53E26394081004C3B7C /* VideoPlayerViewController.swift in Sources */,
+				6CD67CBD2639503F00DD86BB /* Extensions.swift in Sources */,
 				6C0BE51826393D31004C3B7C /* AppDelegate.swift in Sources */,
 				6C0BE544263940AF004C3B7C /* ProfileViewController.swift in Sources */,
 				6C0BE51A26393D31004C3B7C /* SceneDelegate.swift in Sources */,
