@@ -192,14 +192,14 @@ extension LoginViewController:LoginButtonDelegate{
                 print("Failed to make facebook graph request")
                 return
             }
-            print("\(result)")
+
             guard let firstName = result["first_name"] as? String,
                   let lastName = result["last_name"] as? String,
                   let email = result["email"] as? String else{
                     print("Failed to get email and name from fb result")
                     return
             }
-            print("\(firstName) and \(lastName) and \(email)")
+            print("try to login with facebook info - firstname : \(firstName), lastname : \(lastName), email : \(email)")
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
