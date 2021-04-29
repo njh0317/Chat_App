@@ -69,6 +69,8 @@ class LoginViewController: UIViewController {
     private let facebookloginButton: FBLoginButton = {
         let button = FBLoginButton()
         button.permissions = ["email","public_profile"]
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
         return button
     }()
     override func viewDidLoad() {
@@ -116,7 +118,7 @@ class LoginViewController: UIViewController {
                                      width: scrollView.width-60,
                                      height: 52)
         facebookloginButton.frame = CGRect(x: 30,
-                                     y: loginButton.bottom+8,
+                                     y: loginButton.bottom+10,
                                      width: scrollView.width-60,
                                      height: 52)
         facebookloginButton.center = scrollView.center
