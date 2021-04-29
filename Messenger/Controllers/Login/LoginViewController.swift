@@ -244,9 +244,13 @@ extension LoginViewController:LoginButtonDelegate{
             print("try to login with facebook info - firstname : \(firstName), lastname : \(lastName), email : \(email)")
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
-                    DatabaseManager.shared.insertUser(with: ChatAppUser(firstName: firstName,
-                                                                        lastName: lastName,
-                                                                        emailAddress: email))
+                    let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+                    DatabaseManager.shared.insertUser(with: chatUser, completion: { success in
+                        if success{
+                            //upload image
+                            
+                        }
+                    })
                 }
             })
             let credential = FacebookAuthProvider.credential(withAccessToken: token)
