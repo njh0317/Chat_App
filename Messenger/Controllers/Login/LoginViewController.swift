@@ -181,6 +181,8 @@ class LoginViewController: UIViewController {
                 return
             }
             let user = result.user
+            UserDefaults.standard.setValue(email, forKey: "email")
+            
             print("Logged in User:\(user)")
             strongSelf.navigationController?.dismiss(animated:true, completion: nil)
         })
@@ -234,7 +236,7 @@ extension LoginViewController:LoginButtonDelegate{
                 print("Failed to make facebook graph request")
                 return
             }
-            print(result)
+
             guard let firstName = result["first_name"] as? String,
                   let lastName = result["last_name"] as? String,
                   let email = result["email"] as? String,
@@ -244,7 +246,7 @@ extension LoginViewController:LoginButtonDelegate{
                     print("Failed to get email and name from fb result")
                     return
             }
-//            print("try to login with facebook info - firstname : \(firstName), lastname : \(lastName), email : \(email), data : \(data), pictureUrl : \(pictureUrl)")
+            UserDefaults.standard.setValue(email, forKey: "email")
             DatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
