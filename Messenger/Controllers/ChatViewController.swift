@@ -113,10 +113,6 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        messages.append(Message(sender: selfSender, messageId: "1", sentDate: Date(), kind: .text("Hello World Message")))
-//        messages.append(Message(sender: selfSender, messageId: "1", sentDate: Date(), kind: .text("Hello World Message Hello World Message Hello World Message")))
-//        messages.append(Message(sender: selfSender, messageId: "1", sentDate: Date(), kind: .text("Hello World Message")))
         view.backgroundColor = .red
         
         messagesCollectionView.messagesDataSource = self
@@ -160,7 +156,10 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         }
         else{
             // append to existing conversation data
-            DatabaseManager.shared.sendMessage(to: otherUserEmail, mmessage: mmessage, completion: { success in
+            guard let conversationId = conversationId, let name = self.title else {
+                return
+            }
+            DatabaseManager.shared.sendMessage(to: conversationId,name: name, newMessage: mmessage, completion: { success in
                 if success {
                     print("message sent")
                 }
