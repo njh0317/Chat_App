@@ -320,6 +320,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         
         //send Message
         print("Sending: \(text)")
+        
         let mmessage = Message(sender: selfSender, messageId: messageId, sentDate: Date(), kind: .text(text))
         if isNewConversation {
             // create convo in database
